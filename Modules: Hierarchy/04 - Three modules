@@ -1,0 +1,23 @@
+// You are given a module my_dff with two inputs and one output (that implements a D flip-flop). Instantiate three of them, then 
+// chain them together to make a shift register of length 3. The clk port needs to be connected to all instances.
+
+// The module provided to you is: module my_dff ( input clk, input d, output q );
+
+// Note that to make the internal connections, you will need to declare some wires. Be careful about naming your wires and module instances: the names must be unique.
+
+
+module top_module (
+	input clk,
+	input d,
+	output q
+);
+
+	wire con_1, con_2;	// Create two wires. 
+  
+	// Create three instances of my_dff, with three different instance names (d1, d2, and d3).
+	// Connect ports by position: ( input clk, input d, output q)
+	my_dff d1 ( clk, d, con_1 );
+	my_dff d2 ( clk, con_1, con_2 );
+	my_dff d3 ( clk, con_2, q );
+
+endmodule
