@@ -1,0 +1,25 @@
+// In this exercise, create one instance of module mod_a, then connect the module's three pins (in1, in2, and out) to your top-level module's 
+// three ports (wires a, b, and out). The module mod_a is provided for you — you must instantiate it.
+// See https://hdlbits.01xz.net/wiki/Module for reference.
+
+module top_module (
+	input a,
+	input b,
+	output out
+);
+
+	// Create an instance of "mod_a" named "inst0", and connect ports by name:
+	mod_a inst0 ( 
+		.in1(a), 	// Port"in1"connects to wire "a"
+		.in2(b),	// Port "in2" connects to wire "b"
+		.out(out)	// Port "out" connects to wire "out" 
+				// (Note: mod_a's port "out" is not the same as top_module's wire "out". 
+				// It is simply coincidence that they have the same name)
+	);
+
+/*
+	// Create an instance of "mod_a" named "inst1", and connect ports by position:
+	mod_a inst1 ( a, b, out );	// The three wires are connected to ports in1, in2, and out, respectively.
+*/
+	
+endmodule
