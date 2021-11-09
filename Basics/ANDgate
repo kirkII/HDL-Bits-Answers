@@ -1,0 +1,10 @@
+//Create a module that implements an AND gate, using a, b & out.
+
+module top_module( 
+    input a, 
+    input b, 
+    output out );
+	
+    assign out = a & b;	// & : Bit-wise and operator
+    
+endmodule
